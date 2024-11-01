@@ -12,12 +12,12 @@ const PetsList = () => {
       setLoading(true);
       try {
         axios.get('https://api.thecatapi.com/v1/images/search?limit=9&has_breeds=1&api_key=live_3PEQWAzDglUMcq4YeeZ8ZYdZmmnqD2H9DqaMfmn8lPEEKkqeBbKR20Yfa4moUJRj')
-        .then(res => {
-          setCats(res.data);
-        }).catch(err => {
-          console.log(err);
-        })
-        
+          .then(res => {
+            setCats(res.data);
+          }).catch(err => {
+            console.log(err);
+          })
+
       } catch (error) {
         console.error("Error fetching cat data:", error);
       } finally {
@@ -35,7 +35,7 @@ const PetsList = () => {
         <p>Loading...</p>
       ) : (
         <div className="cat-scroll-container">
-            {cats.map((cat, index) => (
+          {cats.map((cat, index) => (
             <div key={index} className="cat-card">
               <img src={cat.url} alt="catImage" className="cat-image" />
               <p>Breed: {cat.breeds[0].name}</p>
