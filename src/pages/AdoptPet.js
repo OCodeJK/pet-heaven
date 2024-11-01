@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './AdoptPet.css';
 
 const AdoptPet = () => {
   const location = useLocation();
   const {infoData} = location.state || {};
+
+  const [selectedDate, setSelectedDate] = useState("");
 
   return(
     <div className="adopt-container">
