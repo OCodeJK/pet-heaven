@@ -1,26 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 import './AdoptPet.css';
 
 const AdoptPet = () => {
-  const [adoptionInfo, setAdoptionInfo] = useState({ petId: '', memberName: '' });
+  const location = useLocation();
+  const {infoData} = location.state || {};
 
-  const handleChange = (e) => {
-    setAdoptionInfo({ ...adoptionInfo, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Send adoption request to the backend or email to the admin
-  };
-
-  return (
-    <div>
-      <h2>Adopt a Pet</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="petId" value={adoptionInfo.petId} onChange={handleChange} placeholder="Pet ID" />
-        <input type="text" name="memberName" value={adoptionInfo.memberName} onChange={handleChange} placeholder="Your Name" />
-        <button type="submit">Submit Request</button>
-      </form>
+  return(
+    <div className="adopt-container">
+      <h1>Adoption Page</h1>
+      {infoData ? (
+                <div>
+                    <img src={infoData.url} alt="catImage" className="cat-image"/>
+                    <p><strong>Breed: </strong>{infoData.breeds[0].name}</p>
+                    <p>Before we let you adopt this pet, we have to know you have the right ethics for it.
+                    Please let us know when you are available so we can interview you
+                    </p>
+                    <input type="date" placeholder='Select a date'/><br></br>
+                    <button>Confirm</button>
+                </div>
+                   
+            ) : (
+                <p>No detail was found.</p>
+            )}
     </div>
   );
 }
