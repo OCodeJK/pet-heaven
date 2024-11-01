@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './PetsList.css';
 
 
@@ -10,14 +11,15 @@ const PetsList = () => {
     const fetchCats = async () => {
       setLoading(true);
       try {
-        const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=9&has_breeds=1&api_key=live_3PEQWAzDglUMcq4YeeZ8ZYdZmmnqD2H9DqaMfmn8lPEEKkqeBbKR20Yfa4moUJRj');
-        const data = await response.json();
-        setCats(data); // Store the fetched cat data in the state
-        console.log(data); // console log for info to pull
+        axios.get('https://api.thecatapi.com/v1/images/search?limit=9&has_breeds=1&api_key=live_3PEQWAzDglUMcq4YeeZ8ZYdZmmnqD2H9DqaMfmn8lPEEKkqeBbKR20Yfa4moUJRj')
+        .then(res => {
+          setCats(res.data);
+        }).catch(err => {
+          console.log(err);
+        })
+        
       } catch (error) {
-
         console.error("Error fetching cat data:", error);
-
       } finally {
         setLoading(false);
       }
