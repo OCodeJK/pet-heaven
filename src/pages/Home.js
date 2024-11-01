@@ -6,7 +6,6 @@ const Home = () => {
   const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
   useEffect(() => {
-    
     let userInfo = JSON.parse(localStorage.getItem("users")) || {};
     setName(userInfo[0].username || "Guest");
   }, []);
