@@ -1,22 +1,48 @@
 import React, { useState, useEffect } from 'react';
 import './PetsList.css';
 
+
 const PetsList = () => {
-  const [pets, setPets] = useState([]);
+  const [cats, setCats] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch list of pets from an API or backend
-    // Example: setPets(responseData);
+    const fetchCats = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=9&has_breeds=1&api_key=live_3PEQWAzDglUMcq4YeeZ8ZYdZmmnqD2H9DqaMfmn8lPEEKkqeBbKR20Yfa4moUJRj');
+        const data = await response.json();
+        setCats(data); // Store the fetched cat data in the state
+        console.log(data); // console log for info to pull
+      } catch (error) {
+
+        console.error("Error fetching cat data:", error);
+
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCats();
   }, []);
 
   return (
-    <div>
-      <h2>Available Pets for Adoption</h2>
-      <ul>
-        {pets.map((pet) => (
-          <li key={pet.id}>{pet.name} - {pet.breed}</li>
-        ))}
-      </ul>
+    <div className="pets-list">
+      <h2>Available Cats for Adoption</h2>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className="cat-scroll-container">
+            {cats.map((cat, index) => (
+            <div key={index} className="cat-card">
+              <img src={cat.url} alt="catImage" className="cat-image" />
+              <p>Breed: {cat.breeds[0].name}</p>
+              <p>Origin: {cat.breeds[0].origin}</p>
+              <p>Temperament: {cat.breeds[0].temperament}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
