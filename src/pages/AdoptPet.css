@@ -1,0 +1,15 @@
+/* AdoptPet.css */
+.adopt-container {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 15px;
+  }

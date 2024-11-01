@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import './Home.css'
 
 const Home = () => {
+  const [name, setName] = useState("");
+  const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+  useEffect(() => {
+    
+    let userInfo = JSON.parse(localStorage.getItem("users")) || {};
+    setName(userInfo[0].username || "Guest");
+  }, []);
+
+
   return (
     <div>
-        <h1>Welcome to the Home Page</h1>
-        <p>This is the home page of our SPA example.</p>
+      <br></br>
+      <h1>Welcome to Pet Heaven {!loggedInUser ? "" : name}</h1>
+      <p>We help abandoned pets find a new home.</p>
     </div>
   )
 }

@@ -1,26 +1,37 @@
-import React from 'react';
-import './Navbar.css';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css'
 
-const Navbar = ({isLoggedIn, onLogout}) => {
+const Navbar = () =>{
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Check if the user is logged in by looking for loggedInUser in local storage
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (loggedInUser) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('loggedInUser'); // Remove user data from local storage on logout
+    setIsLoggedIn(false);
+    window.location.reload();
+  };
+
   return (
-    <nav className='navbar'>
-        <h2>My SPA</h2>
-        <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/products">Products</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/aboutus">About Us</Link></li>
-            {!isLoggedIn && <li><Link to="/login">Login</Link></li>}
-            {!isLoggedIn && <li><Link to="/signup">Sign Up</Link></li>}
-            {isLoggedIn && (
-                <li>
-                    <button onClick={onLogout} className='logout-button'>Logout</button>
-                </li>
-            )}
-        </ul>
+    <nav className="navbar">
+      <Link to="/">Home</Link>
+      <Link to="/pets">Available Pets</Link>
+      {!isLoggedIn ? <Link to="/register">Join Us</Link> : ""}
+      {!isLoggedIn ? <Link to="/login">Login</Link> : ""}
+      {isLoggedIn ? <Link to="/" onClick={handleLogout}>Logout</Link> : ""}
+      <Link to="/release">Release Pet</Link>
+      <Link to="/adopt">Adopt Pet</Link>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
