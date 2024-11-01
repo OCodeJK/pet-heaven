@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import PetsList from './pages/PetsList';
@@ -8,7 +9,7 @@ import ReleasePet from './pages/ReleasePet';
 import AdoptPet from './pages/AdoptPet';
 import Footer from './components/Footer';
 import Login from './pages/Login';
-import './App.css';
+import PetDetail from './pages/PetDetail';
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/login" element={<Login/>} />
         <Route path="/release" element={<ReleasePet />} />
         <Route path="/adopt" element={<AdoptPet />} />
+        <Route path="/detail" element={<PetDetail />}/>
       </Routes>
       <Footer />
     </Router>
