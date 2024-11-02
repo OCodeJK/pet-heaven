@@ -24,8 +24,9 @@ const Register = () => {
       // Save the user data to local storage
       const updatedUsers = [...existingUsers, formData];
       localStorage.setItem('users', JSON.stringify(updatedUsers));
-      navigate('/'); // Redirect to home page
-      // window.location.reload(); 
+      localStorage.setItem('loggedInUser', JSON.stringify(updatedUsers));
+      navigate('/'); 
+      window.location.reload(); // Redirect to home page
 
       // Clear the form
       setFormData({ username: '', email: '', password: '' });

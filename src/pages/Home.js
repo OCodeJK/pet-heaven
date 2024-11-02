@@ -7,14 +7,19 @@ const Home = () => {
 
   useEffect(() => {
     let userInfo = JSON.parse(localStorage.getItem("users")) || {};
-    setName(userInfo[0].username || "Guest");
+    if (loggedInUser) {
+      setName(userInfo[0].username);
+    } else {
+      setName("Guest");
+    }
+    // eslint-disable-next-line
   }, []);
 
 
   return (
     <div>
       <br></br>
-      <h1>Welcome to Pet Heaven {!loggedInUser ? "" : name}</h1>
+      <h1>Welcome to Pet Heaven, {name}</h1>
       <p>We help abandoned pets find a new home.</p>
     </div>
   )
