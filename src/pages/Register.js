@@ -27,9 +27,6 @@ const Register = () => {
       localStorage.setItem('loggedInUser', JSON.stringify(updatedUsers));
       navigate('/'); 
       window.location.reload(); // Redirect to home page
-
-      // Clear the form
-      setFormData({ username: '', email: '', password: '' });
     }
   };
 
