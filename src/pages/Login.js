@@ -16,7 +16,7 @@ const Login = () => {
     // Retrieve users from local storage
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const user = users.find(
-      (u) => u.username === credentials.username && u.password === credentials.password
+      (u) => u.username === credentials.username.toLowerCase() && u.password === credentials.password
     );
 
     if (user) {
