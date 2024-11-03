@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Register.css';
+import './Form.css';
 
 const Register = () => {
   const [formData, setFormData] = useState({ username: '', email: '', password: '' });
@@ -32,7 +32,7 @@ const Register = () => {
 
   return (
     <div className="register-container">
-      <h2>Register as a Supporter</h2>
+      <h2>Join us today!</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
