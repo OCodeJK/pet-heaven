@@ -44,12 +44,12 @@ const CatList = () => {
       <button className="view-button" onClick={handleButtonClick}>View Dogs</button>
       <h2>Available Cats for Adoption</h2>
       {loading ? (
-        <p>Loading...</p>
+        <h1>Loading....</h1>
       ) : (
-        <div className="cat-container">
+        <div className="pet-container">
           {cats.map((cat, index) => (
-            <div key={index} className="cat-card">
-              <img src={cat.url} alt="catImage" className="cat-image" onClick={() => handleImageClick(cat)} style={{cursor: 'pointer'}} />
+            <div key={index} className="pet-card">
+              <img src={cat.url} alt="catImage" className="pet-image" onClick={() => handleImageClick(cat)} style={{cursor: 'pointer'}} />
               <br></br>
               <p>Breed: {cat.breeds[0].name}</p>
               <p>Origin: {cat.breeds[0].origin}</p>

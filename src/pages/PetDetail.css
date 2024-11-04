@@ -1,3 +1,4 @@
+/* Pet Detail Styling */
 .pet-detail-container h1 {
     color: #4CAF50;
     margin: 20px;
@@ -9,7 +10,7 @@
     font-size: 20px;
 }
 
-.pet-detail-container .cat-image {
+.pet-detail-container .pet-image {
     width: 100%;
     object-fit: contain;
     border-radius: 8px;
@@ -53,7 +54,7 @@
 
 /* Media Query for Smaller Media Devices */
 @media (max-width: 480px) {
-    .pet-detail-container .cat-image {
+    .pet-detail-container .pet-image {
         width: 85%;
         position: static;
         margin-left: 32px;

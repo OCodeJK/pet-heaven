@@ -11,12 +11,13 @@ const AdoptPet = () => {
       <h1>Adoption Page</h1>
       {infoData ? (
                 <div>
-                    <img src={infoData.url} alt="catImage" className="cat-image"/>
+                    <img src={infoData.url} alt="petImage" className="pet-image"/>
                     <p><strong>Breed: </strong>{infoData.breeds[0].name}</p>
                     <p>Before we let you adopt this pet, we have to know you have the right ethics for it.
                     Please let us know when you are available so we can interview you
                     </p>
-                    <input type="date" placeholder='Select a date'/><br></br>
+                    <input type="date" placeholder='Select a date' min={new Date().toJSON().slice(0, 10)}/>
+                    <br />
                     <button>Confirm</button>
                 </div>
                    

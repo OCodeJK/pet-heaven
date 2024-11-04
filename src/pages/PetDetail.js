@@ -25,7 +25,7 @@ const PetDetail = () => {
             <h1>Pet Detail</h1>
             {infoData ? (
                 <div>
-                    <img src={infoData.url} alt="catImage" className="cat-image"/>
+                    <img src={infoData.url} alt="petImage" className="pet-image"/>
                     <p><strong>Breed:</strong>{infoData.breeds[0].name}</p>
                     <p><strong>Weight:</strong>{infoData.breeds[0].weight.metric} metrics</p>
                     <p><strong>Origin:</strong>{infoData.breeds[0].origin}</p>

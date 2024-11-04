@@ -28,7 +28,7 @@ const Navbar = () =>{
 
   return (
     <nav className="navbar">
-      <h1 className="navbar-logo">Insert Logo Here</h1>
+      <h1 className="navbar-logo">Pet Heaven</h1>
       <button className="mobile-menu-icon" onClick={toggleMobileMenu}>
         ☰
       </button>
@@ -39,7 +39,6 @@ const Navbar = () =>{
         {!isLoggedIn && <li><Link to="/login">Login</Link></li>}
         {isLoggedIn &&<li> <Link to="/" onClick={handleLogout}>Logout</Link></li>}
         {isLoggedIn &&<li> <Link to="/release">Release Pet</Link></li>}
-        {isLoggedIn && <li><Link to="/adopt">Adopt Pet</Link></li>}
       </ul>  
     </nav>
   );
