@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import './AdoptPet.css';
+import './style.css';
 
 const AdoptPet = () => {
   const location = useLocation();
@@ -14,11 +14,11 @@ const AdoptPet = () => {
                     <img src={infoData.url} alt="petImage" className="pet-image"/>
                     <p><strong>Breed: </strong>{infoData.breeds[0].name}</p>
                     <p>Before we let you adopt this pet, we have to know you have the right ethics for it.
-                    Please let us know when you are available so we can interview you
+                    <p>Please let us know when you are available so we can interview you.</p>
                     </p>
-                    <input type="date" placeholder='Select a date' min={new Date().toJSON().slice(0, 10)}/>
+                    <input type="date" placeholder="Select a date" min={new Date().toJSON().slice(0, 10)} required/>
                     <br />
-                    <button>Confirm</button>
+                    <button className="adoptButton">Confirm</button>
                 </div>
                    
             ) : (

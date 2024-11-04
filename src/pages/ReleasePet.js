@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+import './style.css';
 
 const ReleasePet = () => {
-  const [petInfo, setPetInfo] = useState({ name: '', breed: '', age: '' });
 
   const handleChange = (e) => {
-    setPetInfo({ ...petInfo, [e.target.name]: e.target.value });
+    
   };
 
   const handleSubmit = (e) => {
@@ -13,12 +13,12 @@ const ReleasePet = () => {
   };
 
   return (
-    <div>
+    <div className="release-container">
       <h2>Release Your Pet</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="name" value={petInfo.name} onChange={handleChange} placeholder="Pet's Name" />
-        <input type="text" name="breed" value={petInfo.breed} onChange={handleChange} placeholder="Breed" />
-        <input type="number" name="age" value={petInfo.age} onChange={handleChange} placeholder="Age" />
+        <input type="text" name="name" onChange={handleChange} placeholder="Pet's Name" />
+        <input type="text" name="breed" onChange={handleChange} placeholder="Breed" />
+        <input type="number" name="age" onChange={handleChange} placeholder="Age" />
         <button type="submit">Submit</button>
       </form>
     </div>

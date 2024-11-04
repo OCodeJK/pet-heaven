@@ -20,7 +20,6 @@ const CatList = () => {
           }).catch(err => {
             console.log(err);
           })
-
       } catch (error) {
         console.error("Error fetching cat data:", error);
       } finally {

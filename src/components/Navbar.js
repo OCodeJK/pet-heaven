@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css'
 
 const Navbar = () =>{
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate()
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -23,6 +24,7 @@ const Navbar = () =>{
   const handleLogout = () => {
     localStorage.removeItem('loggedInUser'); // Remove user data from local storage on logout
     setIsLoggedIn(false);
+    navigate('/');
     window.location.reload();
   };
 
