@@ -38,6 +38,22 @@
   margin: 8px 0;
 }
 
+.view-button {
+  margin:20px;
+  font-weight:bold;
+  font-size: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.view-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.view-button:active {
+  transform: scale(1);
+}
+
 /* Media Query for Tablets */
 @media (max-width: 768px) {
   .cat-image {

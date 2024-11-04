@@ -34,7 +34,7 @@ const Navbar = () =>{
       </button>
       <ul className={`nav-links ${isMobileMenuOpen ? 'nav-links-mobile' : ''}`}>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/pets">Available Pets</Link></li>
+        <li><Link to="/cats">Available Pets</Link></li>
         {!isLoggedIn && <li><Link to="/register">Join Us</Link></li>}
         {!isLoggedIn && <li><Link to="/login">Login</Link></li>}
         {isLoggedIn &&<li> <Link to="/" onClick={handleLogout}>Logout</Link></li>}
