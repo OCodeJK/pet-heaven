@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './Home.css'
+import './style.css'
 
 const Home = () => {
   const [name, setName] = useState("");
@@ -17,7 +17,7 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div className="home-container">
       <br></br>
       <h1>Welcome to Pet Heaven, {name}</h1>
       <p>We help abandoned pets find a new home.</p>

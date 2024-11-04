@@ -1,0 +1,71 @@
+/* Home.css */
+.home-container {
+    text-align: center;
+    padding: 40px 0;
+}
+  
+.home-container h1 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+}
+
+.home-container p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align:center;
+}
+
+/* Register.css */
+.register-container {
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top:200px;
+}
+
+.register-container h2 {
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.register-container input {
+  margin-bottom: 10px;
+}
+
+/* Login.css */
+.login-container {
+max-width: 500px;
+margin: 20px auto;
+background-color: white;
+padding: 30px;
+border-radius: 8px;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+margin-top:200px;
+}
+.login-container h2{
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.login-container input {
+  margin-bottom: 10px;
+}
+
+
+/* Media Query for Mobile */
+@media (max-width: 480px) {
+.login-container {
+  max-width:350px;
+}
+.register-container {
+  max-width: 350px;
+}
+}
