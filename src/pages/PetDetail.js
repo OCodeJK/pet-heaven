@@ -10,7 +10,9 @@ const PetDetail = () => {
     const { infoData } = location.state || {}; //Get the detail when clicking the image that is passed here
 
     //handle the adoptButton
-    const handleButtonClick = () => {
+    const handleButtonClick = (e) => {
+        e.preventDefault();
+        
         if (loggedInUser) {
             //navigate to adoption page
             navigate('/adopt', {state: { infoData }})

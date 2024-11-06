@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './style.css';
 
 const AdoptPet = () => {
   const location = useLocation();
   const {infoData} = location.state || {};
+  const [date, setDate] = useState("");
+
+  const handleDateChange = (e) => {
+    setDate(e.target.value);
+  }
+
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+
+    if (date) {
+      alert("Interview has been scheduled, see you soon!");
+    } else {
+      alert("Please select a valid date.");
+    }
+  }
 
   return(
     <div className="adopt-container">
@@ -16,9 +31,9 @@ const AdoptPet = () => {
                     <p>Before we let you adopt this pet, we have to know you have the right ethics for it.
                     <p>Please let us know when you are available so we can interview you.</p>
                     </p>
-                    <input type="date" placeholder="Select a date" min={new Date().toJSON().slice(0, 10)} required/>
+                    <input type="date" placeholder="Select a date" min={new Date().toJSON().slice(0, 10)} onChange={handleDateChange} value={date}/>
                     <br />
-                    <button className="adoptButton">Confirm</button>
+                    <button className="adoptButton" onClick={handleButtonClick}>Confirm</button>
                 </div>
                    
             ) : (
