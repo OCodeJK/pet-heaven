@@ -39,6 +39,12 @@
   margin-bottom: 10px;
 }
 
+.register-container p {
+  text-align: center;
+  color: red;
+  margin-top: 15px;
+}
+
 
 /* Login Page */
 .login-container {
