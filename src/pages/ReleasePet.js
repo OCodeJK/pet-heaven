@@ -1,26 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
 
 const ReleasePet = () => {
+  const [releaseInfo, setReleaseInfo] = useState({
+    animal: "",
+    breed: "",
+    date: ""
+  });
+  const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
-    
+    setReleaseInfo({...releaseInfo, [e.target.name]:e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleButtonClick = (e) => {
     e.preventDefault();
-    // Send pet information to the backend or email to the admin
-  };
+
+    if (releaseInfo.animal && releaseInfo.breed && releaseInfo.date) {
+      alert("Interview has been scheduled, see you soon!");
+
+    } else if(!releaseInfo.animal){
+      setMessage("Please enter a valid animal");
+
+    } else if(!releaseInfo.breed){
+      setMessage("Please enter a breed type");
+
+    } else {
+      setMessage("Please enter a valid date");
+    }
+  }
 
   return (
     <div className="release-container">
       <h2>Release Your Pet</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="name" onChange={handleChange} placeholder="Pet's Name" />
-        <input type="text" name="breed" onChange={handleChange} placeholder="Breed" />
-        <input type="number" name="age" onChange={handleChange} placeholder="Age" />
-        <button type="submit">Submit</button>
-      </form>
+      <br />
+      <input required type="text" name="animal" onChange={handleChange} placeholder="What pet are you releasing?" value={releaseInfo.animal}/>
+      <input required type="text" name="breed" onChange={handleChange} placeholder="Breed" value={releaseInfo.breed} />
+      <input required type="date" name="date" onChange={handleChange} placeholder="Schedule an appointment" min={new Date().toJSON().slice(0, 10)} value={releaseInfo.date} />
+      <button onClick={handleButtonClick}>Submit</button>
+      {message && <p>{message}</p>}
     </div>
   );
 }

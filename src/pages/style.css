@@ -50,6 +50,7 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   margin-top:200px;
 }
+
 .login-container h2{
   color: #4CAF50;
   text-align: center;
@@ -60,6 +61,40 @@
   margin-bottom: 10px;
 }
 
+.login-container p {
+  color: red;
+  text-align: center;
+}
+
+
+/* Release Pet Page */
+.release-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top:200px;
+}
+
+.release-container h2{
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.release-container input {
+  margin-bottom: 20px;
+}
+
+.release-container p {
+  text-align: center;
+  color: red;
+  margin-top:20px;
+}
 
 /* Pet Detail Page */
 .pet-detail-container h1 {
@@ -123,6 +158,11 @@
   width: 100%;
   object-fit: contain;
   border-radius: 8px;
+}
+
+.error-message{
+  color: red;
+  text-align: center;
 }
 
 .adopt-container input[type="date"] {

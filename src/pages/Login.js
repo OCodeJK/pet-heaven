@@ -54,6 +54,7 @@ const Login = () => {
         />
         <button type="submit">Login</button>
       </form>
+      <br />
       {message && <p>{message}</p>}
     </div>
   );

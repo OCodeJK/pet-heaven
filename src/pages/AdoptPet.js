@@ -6,6 +6,7 @@ const AdoptPet = () => {
   const location = useLocation();
   const {infoData} = location.state || {};
   const [date, setDate] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleDateChange = (e) => {
     setDate(e.target.value);
@@ -17,7 +18,7 @@ const AdoptPet = () => {
     if (date) {
       alert("Interview has been scheduled, see you soon!");
     } else {
-      alert("Please select a valid date.");
+      setMessage("Please select a valid date.");
     }
   }
 
@@ -32,8 +33,10 @@ const AdoptPet = () => {
                     <p>Please let us know when you are available so we can interview you.</p>
                     </p>
                     <input type="date" placeholder="Select a date" min={new Date().toJSON().slice(0, 10)} onChange={handleDateChange} value={date}/>
+                    {message && <p className="error-message">{message}</p>}
                     <br />
                     <button className="adoptButton" onClick={handleButtonClick}>Confirm</button>
+                    
                 </div>
                    
             ) : (
