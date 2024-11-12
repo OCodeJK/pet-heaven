@@ -7,7 +7,8 @@ const Home = () => {
   const [name, setName] = useState('');
   const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
   const navigate = useNavigate();
-  const [featuredPet, setFeaturedPet] = useState("");
+  const [featuredCat, setFeaturedCat] = useState("");
+  const [featuredDog, setFeaturedDog] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -19,11 +20,20 @@ const Home = () => {
     }
     // eslint-disable-next-line
     
-    const fetchFeaturedPet = async () => {
+    const fetchFeaturedCat = async () => {
       setLoading(true);
+      await axios.get('https://api.thedogapi.com/v1/images/search?limit=1&has_breeds=1&api_key=live_XjhCuLTedTIe03t2MeMEWQVZoF0qVfKV08iJR7B2grwqOEAdJauMV74eyvQtrZIe')
+      .then(res => {
+        setFeaturedDog(res.data);
+        console.log(res.data);
+
+      }).catch(err => {
+        console.log("Error: " + err);
+      })
+
       await axios.get('https://api.thecatapi.com/v1/images/search?limit=1&has_breeds=1&api_key=live_3PEQWAzDglUMcq4YeeZ8ZYdZmmnqD2H9DqaMfmn8lPEEKkqeBbKR20Yfa4moUJRj')
       .then(res => {
-        setFeaturedPet(res.data);
+        setFeaturedCat(res.data);
         setLoading(false);
         console.log(res.data);
 
@@ -31,7 +41,7 @@ const Home = () => {
         console.log("Error: " + err);
       })
     }
-    fetchFeaturedPet();
+    fetchFeaturedCat();
   }, []);
 
   const herobuttonHandler = () => {
@@ -57,12 +67,20 @@ const Home = () => {
       ) : (
         <section className="featured-pet">
           <h2>Meet Our Featured Pet!</h2> 
-          {featuredPet.map((pet, index) => (
+          {featuredCat.map((cat, index) => (
             <div key={index} className="pet-card">
-              <img src={pet.url} alt="petImage" className="pet-image" onClick={() => handleImageClick(pet)} style={{cursor: 'pointer'}}/>
+              <img src={cat.url} alt="petImage" className="pet-image" onClick={() => handleImageClick(cat)} style={{cursor: 'pointer'}}/>
               <br></br>
-              <p>Breed: {pet.breeds[0].name}</p>
-              <p>Temperament: {pet.breeds[0].temperament}</p>
+              <p>Breed: {cat.breeds[0].name}</p>
+              <p>Temperament: {cat.breeds[0].temperament}</p>
+            </div>
+          ))}
+          {featuredDog.map((dog, index) =>(
+            <div key={index} className="pet-card">
+              <img src={dog.url} alt="petImage" className="pet-image" onClick={() => handleImageClick(dog)} style={{cursor: 'pointer'}}/>
+              <br></br>
+              <p>Breed: {dog.breeds[0].name}</p>
+              <p>Temperament: {dog.breeds[0].temperament}</p>
             </div>
           ))}
         </section>

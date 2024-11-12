@@ -41,6 +41,7 @@
 
 /* Featured Pet */
 .featured-pet{
+  align-items: center;
   text-align: center;
   padding: 40px 20px;
 }
@@ -49,6 +50,17 @@
   font-size: 2rem;
   margin-bottom: 15px;
   color: #333;
+}
+
+
+.featured-pet p {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.featured-pet .pet-card {
+  display:inline-block;
   animation: slideUp 0.8s ease-in-out;
 }
 
@@ -57,26 +69,8 @@
   font-size: 2rem;
   font-weight: bold;
   color: #45a049;
-  animation: fadeIn 1s infinite alternate;
 }
 
-.featured-pet p {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #333;
-  animation: slideUp 0.8s ease-in-out;
-}
-
-.featured-pet button {
-  width: 50%;
-  font-size: 30px;
-  font-weight:bold;
-}
-
-.featured-pet .pet-card {
-  width: 100%;
-  animation: slideUp 0.8s ease-in-out;
-}
 
 /* About Us Section */
 .about-us {
@@ -147,6 +141,7 @@
 .video-section {
   text-align: center;
   padding: 40px 20px;
+  margin-bottom: 25px;
 }
 
 .video-section h2 {
