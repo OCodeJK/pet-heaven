@@ -39,6 +39,45 @@
   background-color: #f1f1f1;
 }
 
+/* Featured Pet */
+.featured-pet{
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.featured-pet h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+  animation: slideUp 0.8s ease-in-out;
+}
+
+.loading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #45a049;
+  animation: fadeIn 1s infinite alternate;
+}
+
+.featured-pet p {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+  animation: slideUp 0.8s ease-in-out;
+}
+
+.featured-pet button {
+  width: 50%;
+  font-size: 30px;
+  font-weight:bold;
+}
+
+.featured-pet .pet-card {
+  width: 100%;
+  animation: slideUp 0.8s ease-in-out;
+}
+
 /* About Us Section */
 .about-us {
   text-align: center;

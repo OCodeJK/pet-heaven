@@ -59,7 +59,6 @@ const PetDetail = () => {
                 <div className="modal-box">
                     <h2>Adoption Successful!</h2>
                     <p>Thank you for giving this pet a new home! See you soon! 🐾</p>
-                    
                     <button className="modal-close-button" onClick={closeModal}>Close</button>
                 </div>
              </div>
