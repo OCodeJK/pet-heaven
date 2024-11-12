@@ -35,7 +35,7 @@ const DogList = () => {
   }
 
   const handleButtonClick = () => {
-        navigate('/cats');
+    navigate('/cats');
   }
 
   return (
