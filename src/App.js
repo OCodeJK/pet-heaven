@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Register from './pages/Register';
 import ReleasePet from './pages/ReleasePet';
-import AdoptPet from './pages/AdoptPet';
 import Footer from './components/Footer';
 import Login from './pages/Login';
 import PetDetail from './pages/PetDetail';
@@ -21,11 +20,10 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/cats" element={<CatList />} />
         <Route path="/dogs" element={<DogList />}/>
+        <Route path="/detail" element={<PetDetail />}/>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/release" element={<ReleasePet />} />
-        <Route path="/adopt" element={<AdoptPet />} />
-        <Route path="/detail" element={<PetDetail />}/>
       </Routes>
       <Footer />
     </Router>

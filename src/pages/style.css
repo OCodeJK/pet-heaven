@@ -1,21 +1,137 @@
 /* Home Page */
 .home-container {
-    text-align: center;
-    padding: 40px 0;
+  font-family: Arial, sans-serif;
 }
   
-.home-container h1 {
-  font-size: 2.5rem;
-  color: #333;
+.hero-section {
+  background: linear-gradient(to right, #4caf50, #81c784);
+  color: white;
   text-align: center;
+  padding: 50px 20px;
+  animation: slideUp 1s ease-in-out;
 }
 
-.home-container p {
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: slideUp 0.8s ease-in-out;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  animation: slideUp 0.8s ease-in-out 0.2s;
+}
+
+.hero-button {
   font-size: 1.2rem;
-  color: #666;
+  padding: 10px 20px;
+  background-color: white;
+  color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  animation: scaleIn 0.8s ease-in-out 0.5s;
+}
+
+.hero-button:hover {
+  background-color: #f1f1f1;
+}
+
+/* About Us Section */
+.about-us {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.about-us h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+  animation: slideUp 0.8s ease-in-out;
+}
+
+.about-us p {
+  font-size: 1.2rem;
+  color: #555;
   max-width: 600px;
-  margin: 20px auto;
-  text-align:center;
+  margin: 0 auto;
+  line-height: 1.5;
+  animation: slideUp 0.8s ease-in-out 0.2s;
+}
+
+/* Reviews Section */
+.reviews {
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.reviews h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  animation: slideUp 0.8s ease-in-out;
+}
+
+.reviews-slider {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  overflow: auto;
+  padding: 10px;
+}
+
+.review {
+  flex: 0 0 300px;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  animation: scaleIn 0.8s ease-in-out 0.3s;
+}
+
+.review p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.review h4 {
+  font-size: 1.1rem;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+/* Video Section */
+.video-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.video-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  animation: slideUp 0.8s ease-in-out;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.video-container iframe {
+  width: 80%;
+  max-width: 600px;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  animation: scaleIn 0.8s ease-in-out 0.3s;
 }
 
 /* Register Page */
@@ -103,83 +219,211 @@
 }
 
 /* Pet Detail Page */
+.pet-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
 .pet-detail-container h1 {
   color: #4CAF50;
   margin: 20px;
   text-align: center;
+  font-size: 2.5rem;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 .pet-detail-container p {
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
+  font-size: 1.2rem;
+  color: #333;
   text-align: center;
-  padding: 15px;
+  margin: 10px 0;
+  padding: 10px;
+  animation: slideIn 1.5s ease-in-out;
 }
 
 .pet-detail-container .pet-image {
   width: 100%;
-  object-fit: contain;
-  border-radius: 8px;
+  max-height: 400px;
+  object-fit: fill;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  animation: zoomIn 1s ease-in-out;
 }
 
 .adoptButton {
-  width: 30%;
-  position: relative;
-  left: 73vh;
-  margin-top: 10px;
-  margin-bottom: 100px;
-  font-size: 25px;
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
   font-weight: bold;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 1.2s ease-in-out;
 }
 
 .adoptButton:hover {
   background-color: #45a049;
-  transform: scale(1.05);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .adoptButton:active {
-  transform: scale(1);
+  transform: translateY(0);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Adopt Pet Page */
-.adopt-container h1 {
-  color: #4CAF50;
-  margin: 20px;
-  text-align: center;
-}
-
-.adopt-container p {
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
-  padding:15px;
-  text-align: center;
-}
-
-.adopt-container .pet-image {
-  width: 100%;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-.error-message{
-  color: red;
-  text-align: center;
-}
-
-.adopt-container input[type="date"] {
-  position: relative;
-  left: 95vh;
+.pet-detail-container input[type="date"] {
   margin: 20px 0;
+  width: 100%;
+  text-align: center;
   padding: 10px;
   font-size: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pet-detail-container .error-message{
+  color: red;
+  text-align: center;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears above all content */
+}
+
+/* Modal Box */
+.modal-box {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeInModal 0.3s ease-in-out;
+}
+
+/* Modal Text */
+.modal-box h2 {
+  margin-bottom: 15px;
+  color: #4CAF50;
+}
+
+.modal-box p {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+/* Close Button */
+.modal-close-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-close-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.modal-close-button:active {
+  transform: scale(1);
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
@@ -201,6 +445,23 @@
     left: 19vh;
     font-size: 20px;
   }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+  }
+
+  .reviews-slider {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .video-container iframe {
+    width: 100%;
+  }
 }
 
 
@@ -212,11 +473,16 @@
   .register-container {
     max-width: 350px;
   }
-  .pet-detail-container .pet-image {
-    width: 85%;
-    position: static;
-    margin-left: 32px;
+
+  .pet-detail-container h1 {
+    font-size: 2rem;
   }
+  .pet-detail-container .pet-image {
+    width: 100%;
+    object-fit: fill;
+    max-height: 250px;
+  }
+
 
   .adopt-container .pet-image {
     width: 85%;

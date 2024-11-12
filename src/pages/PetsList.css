@@ -11,6 +11,13 @@
   padding: 15px;
 }
 
+.pets-list h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #45a049;
+  animation: fadeIn 1s infinite alternate;
+}
+
 .pet-container {
   display: flex;
   flex-direction: column;
@@ -30,9 +37,15 @@
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: zoomIn 1s ease-in-out;
 }
 
-/* Adjusted image size for "zoomed out" effect */
+.pet-card:hover {
+  transform: translateY(-10px); /* Lift card on hover */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
 .pet-image {
   width: 60%;       
   max-height: 40vh; 
@@ -58,6 +71,27 @@
 
 .view-button:active {
   transform: scale(1);
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Media Query for Tablets */
