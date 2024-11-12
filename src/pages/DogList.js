@@ -11,7 +11,9 @@ const DogList = () => {
   useEffect(() => {
     const fetchDogs = async () => {
       try {
-        setLoading(true);
+        // Simulating delay using setTimeout for testing the loading 2sec delay
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+
         axios.get('https://api.thedogapi.com/v1/images/search?limit=9&has_breeds=1&api_key=live_XjhCuLTedTIe03t2MeMEWQVZoF0qVfKV08iJR7B2grwqOEAdJauMV74eyvQtrZIe')
           .then(res => {
             setDogs(res.data);
@@ -19,9 +21,8 @@ const DogList = () => {
           }).catch(err => {
             console.log(err);
           })
-
       } catch (error) {
-        console.error("Error fetching cat data:", error);
+        console.error("Error fetching dog data:", error);
       } finally {
         setLoading(false);
       }

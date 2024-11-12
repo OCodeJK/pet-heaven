@@ -12,7 +12,9 @@ const CatList = () => {
   useEffect(() => {
     const fetchCats = async () => {
       try {
-        setLoading(true);
+        // Simulating delay using setTimeout for testing the loading 2sec delay
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+
         axios.get('https://api.thecatapi.com/v1/images/search?limit=9&has_breeds=1&api_key=live_3PEQWAzDglUMcq4YeeZ8ZYdZmmnqD2H9DqaMfmn8lPEEKkqeBbKR20Yfa4moUJRj')
           .then(res => {
             setCats(res.data);
