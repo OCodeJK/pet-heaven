@@ -66,23 +66,25 @@ const Home = () => {
         <h1 className="loading">Loading....</h1>
       ) : (
         <section className="featured-pet">
-          <h2>Meet Our Featured Pet!</h2> 
-          {featuredCat.map((cat, index) => (
-            <div key={index} className="pet-card">
-              <img src={cat.url} alt="petImage" className="pet-image" onClick={() => handleImageClick(cat)} style={{cursor: 'pointer'}}/>
-              <br></br>
-              <p>Breed: {cat.breeds[0].name}</p>
-              <p>Temperament: {cat.breeds[0].temperament}</p>
-            </div>
-          ))}
-          {featuredDog.map((dog, index) =>(
-            <div key={index} className="pet-card">
-              <img src={dog.url} alt="petImage" className="pet-image" onClick={() => handleImageClick(dog)} style={{cursor: 'pointer'}}/>
-              <br></br>
-              <p>Breed: {dog.breeds[0].name}</p>
-              <p>Temperament: {dog.breeds[0].temperament}</p>
-            </div>
-          ))}
+          <h2>Meet Our Featured Pet!</h2>
+          <div className="pet-container">
+            {featuredCat.map((cat, index) => (
+              <div key={index} className="pet-card">
+                <img src={cat.url} alt="petImage" className="pet-image" onClick={() => handleImageClick(cat)} style={{cursor: 'pointer'}}/>
+                <br></br>
+                <p>Breed: {cat.breeds[0].name}</p>
+                <p>Temperament: {cat.breeds[0].temperament}</p>
+              </div>
+            ))}
+            {featuredDog.map((dog, index) =>(
+              <div key={index} className="pet-card">
+                <img src={dog.url} alt="petImage" className="pet-image" onClick={() => handleImageClick(dog)} style={{cursor: 'pointer'}}/>
+                <br></br>
+                <p>Breed: {dog.breeds[0].name}</p>
+                <p>Temperament: {dog.breeds[0].temperament}</p>
+              </div>
+            ))}
+          </div>
         </section>
       )}
 

@@ -52,23 +52,41 @@
   color: #333;
 }
 
-
 .featured-pet p {
-  font-size: 20px;
-  margin-bottom: 15px;
+  font-size: 25px;
+  margin-bottom: 10px;
   color: #333;
+  text-align: center;
+}
+
+.featured-pet .pet-container {
+  flex-direction: row;
+  gap: 20px; /* Adds spacing between cards */
+  margin-top: 20px;
 }
 
 .featured-pet .pet-card {
-  display:inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  border-color:#333;
+  padding: 15px;
+  height: 600px;
   animation: slideUp 0.8s ease-in-out;
 }
+
+.featured-pet img {
+  object-fit: contain;
+  border-radius: 6px;
+}
+
 
 .loading {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
   color: #45a049;
+  margin-top: 20px;
 }
 
 
@@ -447,8 +465,6 @@
   }
 }
 
-
-
 @keyframes fadeInModal {
   from {
     opacity: 0;
@@ -543,5 +559,9 @@
     position: relative;
     margin-bottom: 70px;
     left: 7vh;
+  }
+
+  .featured-pet .pet-container {
+    flex-wrap: wrap;
   }
 }
