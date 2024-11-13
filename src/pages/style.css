@@ -8,19 +8,17 @@
   color: white;
   text-align: center;
   padding: 50px 20px;
-  animation: slideUp 1s ease-in-out;
+  animation: slideIn 0.5s ease-in-out;
 }
 
 .hero-section h1 {
   font-size: 3rem;
   margin-bottom: 10px;
-  animation: slideUp 0.8s ease-in-out;
 }
 
 .hero-section p {
   font-size: 1.5rem;
   margin-bottom: 20px;
-  animation: slideUp 0.8s ease-in-out 0.2s;
 }
 
 .hero-button {
@@ -31,8 +29,6 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  animation: scaleIn 0.8s ease-in-out 0.5s;
 }
 
 .hero-button:hover {
@@ -103,14 +99,173 @@
   animation: slideUp 0.8s ease-in-out;
 }
 
+.find-out-more-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.find-out-more-button:hover {
+  background-color: #45a049;
+}
+
 .about-us p {
   font-size: 1.2rem;
   color: #555;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.5;
-  animation: slideUp 0.8s ease-in-out 0.2s;
+  animation: slideIn 0.8s ease-in-out;
 }
+
+/* About Us Page */
+.about-us-page-container h1{
+  margin-top:10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.about-us-page-container p{
+  text-align: center;
+}
+
+.mission-vision h2,
+.mission-vision p {
+  margin: 15px;
+  text-align: center;
+  padding: 5px;
+}
+.our-impact {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.our-impact .stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 30px;
+  margin-bottom: 5px;
+}
+
+.team h2{
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+
+.stat {
+  text-align: center;
+}
+
+.stat h3 {
+  font-size: 2rem;
+  color: #45a049;
+}
+
+.stat p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Team Section */
+.team {
+  margin-top: 40px;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.team-members .member {
+  text-align: center;
+}
+
+.team-members .member img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+/* Success Stories Section */
+.success-stories {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.success-stories h2{
+  text-align: center;
+  padding-bottom:20px;
+}
+
+.stories {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.story {
+  text-align: center;
+  max-width: 300px;
+}
+
+.story img {
+  border-radius: 10px;
+  width: 100%;
+  height: 80%;
+  margin-bottom: 10px;
+}
+
+.story p {
+  color: #333;
+}
+
+/* Get Involved Section */
+.get-involved {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.get-involved ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.get-involved ul li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.donate-button {
+  padding: 15px 30px;
+  background-color: #28a745;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.donate-button:hover {
+  background-color: #1e7e34;
+}
+
 
 /* Reviews Section */
 .reviews {
@@ -122,37 +277,55 @@
 .reviews h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  animation: slideUp 0.8s ease-in-out;
+  animation: slideIn 0.8s ease-in-out;
 }
 
 .reviews-slider {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  overflow: auto;
-  padding: 10px;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.review-slider.fade-in {
+  animation: slideIn 1.3s ease-in-out;
 }
 
 .review {
-  flex: 0 0 300px;
-  background-color: white;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  animation: scaleIn 0.8s ease-in-out 0.3s;
+  animation: fadeOut 0.5s ease-in-out;
+}
+
+.review img {
+  margin-top: 1rem;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  animation: slideIn 0.5s ease-in-out;
 }
 
 .review p {
   font-size: 1rem;
-  color: #666;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  color: #555;
 }
 
 .review h4 {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   color: #4caf50;
   font-weight: bold;
+  margin-bottom:10px;
+}
+
+.stars {
+  margin: 1rem 0;
+}
+
+.star-icon {
+  font-size: 25px;
+  color: #ffc107;
 }
 
 /* Video Section */
@@ -179,7 +352,7 @@
 .video-container iframe {
   width: 80%;
   max-width: 600px;
-  height: 300px;
+  height: 350px;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border: none;
@@ -347,6 +520,7 @@
 .pet-detail-container .error-message{
   color: red;
   text-align: center;
+  font-weight:bold;
 }
 
 /* Modal Overlay */
@@ -511,6 +685,20 @@
 
   .video-container iframe {
     width: 100%;
+  }
+  .team-members, .stories, .stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-members .member img,
+  .story img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .stat h3 {
+    font-size: 1.8rem;
   }
 }
 

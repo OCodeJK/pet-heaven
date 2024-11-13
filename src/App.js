@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import PetDetail from './pages/PetDetail';
 import CatList from './pages/CatList';
 import DogList from './pages/DogList';
+import About from './pages/About';
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/release" element={<ReleasePet />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
     </Router>

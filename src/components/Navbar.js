@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css'
+import logo from "./pet-haven-logo.png";
 
 const Navbar = () =>{
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -30,7 +31,7 @@ const Navbar = () =>{
 
   return (
     <nav className="navbar">
-      <h1 className="navbar-logo">Pet Heaven</h1>
+      <img src={logo} className="navbar-logo"></img>
       <button className="mobile-menu-icon" onClick={toggleMobileMenu}>
         ☰
       </button>
