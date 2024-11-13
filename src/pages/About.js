@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import "./style.css";
+import janeimg from './resources/janedoe.jpg'
+import johnimg from './resources/johnsmith.jpg'
+import emilyimg from './resources/emilywhite.jpg'
 
 const About = () => {
   const [activeSection, setActiveSection] = useState("about-us");
@@ -68,17 +71,17 @@ const About = () => {
           <h2>Meet Our Team</h2>
           <div className="team-members">
             <div className="member">
-              <img src="https://via.placeholder.com/100" alt="Founder" />
+              <img src={janeimg} alt="Founder" />
               <h4>Jane Doe</h4>
               <p>Founder & CEO</p>
             </div>
             <div className="member">
-              <img src="https://via.placeholder.com/100" alt="Volunteer Manager" />
+              <img src={johnimg} alt="Volunteer Manager" />
               <h4>John Smith</h4>
               <p>Volunteer Manager</p>
             </div>
             <div className="member">
-              <img src="https://via.placeholder.com/100" alt="Veterinarian" />
+              <img src={emilyimg} alt="Veterinarian" />
               <h4>Emily White</h4>
               <p>Head Veterinarian</p>
             </div>

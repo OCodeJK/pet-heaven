@@ -73,7 +73,7 @@ const Home = () => {
     },
     {
       text: "Adopting through Pet Haven was a wonderful experience!",
-      author: "Emily",
+      author: "Elise",
       img: reviewer2,
       rating: 4.5
     },
