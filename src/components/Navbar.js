@@ -31,7 +31,7 @@ const Navbar = () =>{
 
   return (
     <nav className="navbar">
-      <img src={logo} className="navbar-logo"></img>
+      <Link to="/"><img src={logo} className="navbar-logo"></img></Link>
       <button className="mobile-menu-icon" onClick={toggleMobileMenu}>
         ☰
       </button>

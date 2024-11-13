@@ -1,18 +1,19 @@
 /* Footer Styling*/
 footer {
-    align-items: center;
+    position: relative;
+    bottom:0vh;
     background-color: #4CAF50;
-    padding: 10px 20px;
     color: white;
-    float:inline-end;
-    position:relative;
+    
 }
 
 .footer_container {
     padding: 20px 0 40px 0;
-    margin: 0 40px;
+    margin: 0 20px;
     display: flex;
     align-items: center;
+    
+    
 }
 
 .footer_left {
@@ -23,6 +24,7 @@ footer {
     width: 250px;
     height: 150px;
 }
+
 
 .footer_right {
     width: 95%;
@@ -47,8 +49,8 @@ footer {
     padding-bottom: 10px;
 }
 
-@media screen and (max-width:500px) {
-    .footer_left {
+@media (max-width: 480px) {
+    .footer_left{
         display: none;
     }
 

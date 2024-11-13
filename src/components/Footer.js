@@ -1,13 +1,16 @@
 import React from 'react';
 import './Footer.css';
 import logo from "./pet-haven-logo.png";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return <footer>
         <div className="footer_container">
-            <span className="footer_left">
-                <img src={logo}></img>
-            </span>
+            <Link to="/">
+                <span className="footer_left">
+                    <img src={logo}></img>
+                </span>
+            </Link>
 
             <span className="footer_right">
                 <span>

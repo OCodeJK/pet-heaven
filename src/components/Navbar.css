@@ -42,6 +42,11 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  color: antiquewhite;
 }
 
 .mobile-menu-icon {
@@ -65,7 +70,7 @@
     flex-direction: column;
     gap: 15px;                
     position: absolute;
-    top: 120px;
+    top: 124px;
     left: 0;
     background-color: #333;
     padding: 20px 30px;       
