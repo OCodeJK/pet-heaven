@@ -388,8 +388,9 @@
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top:200px;
-  margin-bottom: 48px;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  animation: slideUp 0.7s ease-in-out;
 }
 
 .register-container h2 {
@@ -418,7 +419,8 @@
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   margin-top:200px;
-  margin-bottom: 70px;
+  margin-bottom: 200px;
+  animation: slideUp 0.7s ease-in-out;
 }
 
 .login-container h2{
