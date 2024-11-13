@@ -661,6 +661,54 @@
 
 /* Media Query for Tablets */
 @media (max-width: 768px) {
+  .about-us-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .sidebar ul li {
+    text-align: center;
+    padding: 15px;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .team-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .team-members .member {
+    text-align: center;
+    width: 150px;
+  }
+
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .stats .stat {
+    text-align: center;
+    width: 100px;
+  }
+
+  .donate-button {
+    width: 100%;
+    padding: 12px;
+  }
+
   .adoptButton {
       width: 50%;
       position: relative;
@@ -712,6 +760,28 @@
 
 /* Media Query for Mobile */
 @media (max-width: 480px) {
+  .sidebar ul li {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .content {
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+  }
+
+
+
+  .team-members .member img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .stats .stat h3 {
+    font-size: 1rem;
+  }
+
   .login-container {
     max-width:350px;
   }

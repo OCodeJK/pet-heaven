@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import "./style.css";
-import germanshepimg from "./resources/german_sherpard.jpg";
-import tabbycatimg from "./resources/tabby_cat.jpg";
 
 const About = () => {
   const [activeSection, setActiveSection] = useState("about-us");
