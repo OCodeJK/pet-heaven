@@ -12,6 +12,10 @@ const Navbar = () =>{
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  }
+
   useEffect(() => {
     // Check if the user is logged in by looking for loggedInUser in local storage
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
@@ -26,22 +30,23 @@ const Navbar = () =>{
     localStorage.removeItem('loggedInUser'); // Remove user data from local storage on logout
     setIsLoggedIn(false);
     navigate('/');
+    closeMobileMenu();
     window.location.reload();
   };
 
   return (
     <nav className="navbar">
-      <Link to="/"><img src={logo} className="navbar-logo"></img></Link>
+      <Link to="/"><img src={logo} className="navbar-logo" alt="logo"></img></Link>
       <button className="mobile-menu-icon" onClick={toggleMobileMenu}>
         ☰
       </button>
       <ul className={`nav-links ${isMobileMenuOpen ? 'nav-links-mobile' : ''}`}>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/cats">Available Pets</Link></li>
-        {!isLoggedIn && <li><Link to="/register">Join Us</Link></li>}
-        {!isLoggedIn && <li><Link to="/login">Login</Link></li>}
+        <li><Link to="/" onClick={closeMobileMenu}>Home</Link></li>
+        <li><Link to="/cats" onClick={closeMobileMenu}>Available Pets</Link></li>
+        {!isLoggedIn && <li><Link to="/register" onClick={closeMobileMenu}>Join Us</Link></li>}
+        {!isLoggedIn && <li><Link to="/login" onClick={closeMobileMenu}>Login</Link></li>}
+        {isLoggedIn &&<li> <Link to="/release" onClick={closeMobileMenu}>Rehoming</Link></li>}
         {isLoggedIn &&<li> <Link to="/" onClick={handleLogout}>Logout</Link></li>}
-        {isLoggedIn &&<li> <Link to="/release">Release Pet</Link></li>}
       </ul>  
     </nav>
   );
