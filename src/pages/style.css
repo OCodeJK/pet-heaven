@@ -444,13 +444,92 @@
 
 .release-container input {
   margin-bottom: 20px;
+  animation: slideIn 0.8s ease-in-out;
 }
 
-.release-container p {
+.release-container .error-message {
   text-align: center;
   color: red;
   margin-top:20px;
 }
+
+.steps-section {
+  margin-bottom: 10px;
+  background: #eef6f9;
+  padding: 20px;
+  border-radius: 8px;
+  animation: slideIn 0.8s ease-in-out;
+}
+
+.steps-section h3{
+  margin-bottom:10px;
+}
+
+.steps-section ol {
+  padding-left: 20px;
+  list-style-type: decimal;
+}
+
+.steps-section ol li {
+  margin-bottom: 10px;
+}
+
+.pet-preview {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.pet-preview h3 {
+  text-align: left;
+}
+
+.preview-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.pet-details {
+  flex-grow: 1;
+  margin-top: 20px;
+}
+
+.pet-preview img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.preview-card p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.preview-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.preview-actions button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.preview-actions button:hover {
+  background-color: #45a049;
+}
+
 
 /* Pet Detail Page */
 .pet-detail-container {

@@ -10,9 +10,9 @@ import reviewer3 from './resources/sarah_dog.png';
 import reviewer4 from './resources/bella_cat.jpeg';
 
 const Home = () => {
-  const [name, setName] = useState('');
   const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
   const navigate = useNavigate();
+  const [name, setName] = useState('');
   const [featuredCat, setFeaturedCat] = useState("");
   const [featuredDog, setFeaturedDog] = useState("");
   const [loading, setLoading] = useState(true);
@@ -26,7 +26,6 @@ const Home = () => {
     } else {
       setName('Guest');
     }
-    // eslint-disable-next-line
     
     const fetchFeaturedCat = async () => {
       try {
@@ -49,7 +48,7 @@ const Home = () => {
     };
 
     fetchFeaturedCat();
-  }, []);
+  }, [loggedInUser]);
 
   const herobuttonHandler = () => {
     navigate("/cats");
@@ -103,7 +102,7 @@ const Home = () => {
     }, 4000); // Change slides every 4 seconds
 
     return () => clearInterval(interval); // Clean up interval on unmount
-  }, []);
+  });
 
   
   const renderStars = (rating) => {
@@ -203,7 +202,7 @@ const Home = () => {
           <div className="review">
             <p>"{reviewsData[currentIndex].text}"</p>
             <h4>{reviewsData[currentIndex].author}</h4>
-            <img src={reviewsData[currentIndex].img} className="review-image" alt="Picture of owner and pet"></img>
+            <img src={reviewsData[currentIndex].img} className="review-image" alt="owner and pet"></img>
             <div className="stars">{renderStars(reviewsData[currentIndex].rating)}</div>
           </div>
         </div>
