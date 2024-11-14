@@ -27,7 +27,7 @@ const Home = () => {
       setName('Guest');
     }
     
-    const fetchFeaturedCat = async () => {
+    const fetchFeaturedPet = async () => {
       try {
         setLoading(true);
 
@@ -47,8 +47,9 @@ const Home = () => {
       }
     };
 
-    fetchFeaturedCat();
-  }, [loggedInUser]);
+    fetchFeaturedPet();
+    // eslint-disable-next-line
+  }, []);
 
   const herobuttonHandler = () => {
     navigate("/cats");

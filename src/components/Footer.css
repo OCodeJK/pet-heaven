@@ -90,6 +90,10 @@ footer {
         text-align: center;
     }
 
+    .footer_middle {
+        margin-bottom: 30px;
+    }
+
     .footer_middle span{
         text-align: center;
         display:block;

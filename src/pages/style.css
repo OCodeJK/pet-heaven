@@ -83,6 +83,7 @@
   font-weight: bold;
   color: #45a049;
   margin-top: 20px;
+  animation: blinkIn 1s infinite alternate;
 }
 
 
@@ -680,6 +681,15 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes blinkIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
   }
 }
 
