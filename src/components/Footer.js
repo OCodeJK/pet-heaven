@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import './Footer.css';
 import logo from "./pet-haven-logo.png";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     const navigate = useNavigate();
+    const location = useLocation();
+    
+    // scroll to top because you will be at the bottom of the page using the sitemap
+    useLayoutEffect(() => {
+        document.documentElement.scrollTo({top: 0, left:0, behavior:"smooth"});
+    }, [location.pathname])
 
     const handleLogout = () => {
         localStorage.removeItem('loggedInUser'); // Remove user data from local storage on logout
