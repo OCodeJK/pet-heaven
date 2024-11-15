@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import './style.css';
 
 
@@ -12,9 +12,11 @@ const PetDetail = () => {
     const [message, setMessage] = useState("");
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+
     const handleDateChange = (e) => {
         setDate(e.target.value);
     }
+
 
     //handle the adoptButton
     const handleButtonClick = (e) => {
@@ -24,7 +26,11 @@ const PetDetail = () => {
             //Open a modal box to display message
             setIsModalOpen(true);
         } else if (!loggedInUser) {
-            setMessage("Please log in to adopt.");
+            setMessage(
+                <>
+                    Please <Link to="/login">login</Link> to adopt.
+                </>
+            );
         } else if (!date) {
             setMessage("Please select a date.");
         } 
@@ -46,6 +52,7 @@ const PetDetail = () => {
                     <p><strong>Origin: </strong>{infoData.breeds[0].origin}</p>
                     <p><strong>Temperament: </strong>{infoData.breeds[0].temperament}</p>
                     {!loggedInUser && <p>Log in to schedule an appointment so we can talk!</p>}
+                    {loggedInUser && <p>Please schedule an appointment so we can talk!</p>}
                     {loggedInUser && <input type="date" min={new Date().toJSON().slice(0, 10)} onChange={handleDateChange} value={date} onKeyDown={(e) => {
                         e.preventDefault();
                     }}/>}
