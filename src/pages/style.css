@@ -449,10 +449,11 @@
   animation: slideIn 0.8s ease-in-out;
 }
 
-.release-container .error-message {
+.error-message {
   text-align: center;
   color: red;
   margin-top:20px;
+  animation: slideIn 0.5s ease-in-out;
 }
 
 .steps-section {
@@ -607,11 +608,6 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.pet-detail-container .error-message{
-  color: red;
-  text-align: center;
-  font-weight:bold;
-}
 
 /* Modal Overlay */
 .modal-overlay {

@@ -33,6 +33,7 @@ const Navbar = () =>{
       <ul className={`nav-links ${isMobileMenuOpen ? 'nav-links-mobile' : ''}`}>
         <li><Link to="/" onClick={closeMobileMenu}>Home</Link></li>
         <li><Link to="/cats" onClick={closeMobileMenu}>Available Pets</Link></li>
+        <li><Link to="/about">About Us</Link></li>
         {!loggedInUser && <li><Link to="/register" onClick={closeMobileMenu}>Join Us</Link></li>}
         {!loggedInUser && <li><Link to="/login" onClick={closeMobileMenu}>Login</Link></li>}
         {loggedInUser &&<li> <Link to="/release" onClick={closeMobileMenu}>Rehoming</Link></li>}
