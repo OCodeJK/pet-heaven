@@ -29,7 +29,6 @@ const ReleasePet = () => {
     e.preventDefault();
 
     if (releaseInfo.animal && releaseInfo.breed && releaseInfo.date) {
-      // setIsModalOpen(true);
       setIsPreviewVisible(true); //Show preview on submit
 
     } else if(!releaseInfo.animal){

@@ -19,16 +19,15 @@ const PetDetail = () => {
     //handle the adoptButton
     const handleButtonClick = (e) => {
         e.preventDefault();
-        
+
         if (loggedInUser && date) {
             //Open a modal box to display message
             setIsModalOpen(true);
-            setMessage("");
         } else if (!loggedInUser) {
             setMessage("Please log in to adopt.");
         } else if (!date) {
             setMessage("Please select a date.");
-        }
+        } 
     }
 
     const closeModal = () => {
@@ -47,7 +46,9 @@ const PetDetail = () => {
                     <p><strong>Origin: </strong>{infoData.breeds[0].origin}</p>
                     <p><strong>Temperament: </strong>{infoData.breeds[0].temperament}</p>
                     {!loggedInUser && <p>Log in to schedule an appointment so we can talk!</p>}
-                    {loggedInUser && <input type="date" placeholder="DD/MM/YYYY" min={new Date().toJSON().slice(0, 10)} onChange={handleDateChange} value={date}/>}
+                    {loggedInUser && <input type="date" min={new Date().toJSON().slice(0, 10)} onChange={handleDateChange} value={date} onKeyDown={(e) => {
+                        e.preventDefault();
+                    }}/>}
                     {message && <p className="error-message">{message}</p>}
                     <button className='adoptButton' onClick={handleButtonClick}>Adopt Me !!!</button>
                 </div>
