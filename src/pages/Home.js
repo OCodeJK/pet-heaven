@@ -18,6 +18,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fadeClass, setFadeClass] = useState('fade-in');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     let userInfo = JSON.parse(localStorage.getItem('users')) || {};
@@ -53,6 +54,18 @@ const Home = () => {
 
   const herobuttonHandler = () => {
     navigate("/cats");
+  }
+
+  const rehomeHandler = () => {
+    if (!loggedInUser) {
+      setIsModalOpen(true);
+    } else {
+      navigate("/release")
+    }
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   }
 
   const handleImageClick = (infoData) => {
@@ -145,6 +158,7 @@ const Home = () => {
         <h1>Welcome to Pet Heaven, {name}</h1>
         <p>We connect abandoned pets with loving families.</p>
         <button className="hero-button" onClick={herobuttonHandler}>Find Your Pet Today</button>
+        <button className="hero-button" onClick={rehomeHandler}>Rehome Your Pet</button>
       </section>
 
       {loading ? (
@@ -208,6 +222,17 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Modal Box */}
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal-box">
+            <h2>Sorry!</h2>
+            <p>Please login to rehome your pet.</p>
+            <button onClick={closeModal} className="modal-close-button">Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
