@@ -16,11 +16,15 @@ const Register = () => {
 
     // Check if the user already exists
     const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
-    const userExists = existingUsers.some(user => user.email === formData.email);
+    const userEmailExist = existingUsers.some(user => user.email === formData.email);
+    const userNameExist = existingUsers.some(user => user.username === formData.username);
 
-    if (userExists) {
+    if (userEmailExist) {
       setMessage('User with this email already exists.');
-    } else {
+    } else if (userNameExist){
+      setMessage("User with this name already exists.");
+    }
+    else {
       // Save the user data to local storage
       const updatedUsers = [...existingUsers, formData];
       localStorage.setItem('users', JSON.stringify(updatedUsers));
