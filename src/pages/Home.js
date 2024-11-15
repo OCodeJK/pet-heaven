@@ -29,23 +29,24 @@ const Home = () => {
     }
     
     const fetchFeaturedPet = async () => {
-      try {
         setLoading(true);
 
         //Fetch dog
-        const dogResponse = await axios.get('https://api.thedogapi.com/v1/images/search?limit=1&has_breeds=1&api_key=live_XjhCuLTedTIe03t2MeMEWQVZoF0qVfKV08iJR7B2grwqOEAdJauMV74eyvQtrZIe')
-        setFeaturedDog(dogResponse.data);
+        await axios.get('https://api.thedogapi.com/v1/images/search?limit=1&has_breeds=1&api_key=live_XjhCuLTedTIe03t2MeMEWQVZoF0qVfKV08iJR7B2grwqOEAdJauMV74eyvQtrZIe')
+        .then(res => {
+          setFeaturedDog(res.data);
+        }).catch(err => {
+          console.log("Error: ", err)
+        })
 
         //Fetch cat
-        const catResponse = await axios.get('https://api.thecatapi.com/v1/images/search?limit=1&has_breeds=1&api_key=live_3PEQWAzDglUMcq4YeeZ8ZYdZmmnqD2H9DqaMfmn8lPEEKkqeBbKR20Yfa4moUJRj')
-        setFeaturedCat(catResponse.data);
-
-        setLoading(false);
-
-      } catch (error) {
-        console.log("Error fetching pets:", error);
-        setLoading(false);
-      }
+        await axios.get('https://api.thecatapi.com/v1/images/search?limit=1&has_breeds=1&api_key=live_3PEQWAzDglUMcq4YeeZ8ZYdZmmnqD2H9DqaMfmn8lPEEKkqeBbKR20Yfa4moUJRj')
+        .then(res => {
+          setFeaturedCat(res.data);
+          setLoading(false);
+        }).catch(err => {
+          console.log("Error: ", err)
+        })
     };
 
     fetchFeaturedPet();
