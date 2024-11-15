@@ -23,6 +23,7 @@ const PetDetail = () => {
         if (loggedInUser && date) {
             //Open a modal box to display message
             setIsModalOpen(true);
+            setMessage("");
         } else if (!loggedInUser) {
             setMessage("Please log in to adopt.");
         } else if (!date) {
