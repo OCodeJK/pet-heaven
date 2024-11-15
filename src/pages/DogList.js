@@ -10,20 +10,15 @@ const DogList = () => {
 
   useEffect(() => {
     const fetchDogs = async () => {
-      try {
         setLoading(true);
         await axios.get('https://api.thedogapi.com/v1/images/search?limit=9&has_breeds=1&api_key=live_XjhCuLTedTIe03t2MeMEWQVZoF0qVfKV08iJR7B2grwqOEAdJauMV74eyvQtrZIe')
-          .then(res => {
-            setDogs(res.data);
-            console.log(res.data);
-          }).catch(err => {
-            console.log(err);
-          })
-      } catch (error) {
-        console.error("Error fetching dog data:", error);
-      } finally {
-        setLoading(false);
-      }
+        .then(res => {
+          setDogs(res.data);
+          console.log(res.data);
+          setLoading(false);
+        }).catch(err => {
+          console.log(err);
+        })
     };
     fetchDogs();
   }, []);
