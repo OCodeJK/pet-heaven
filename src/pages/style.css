@@ -560,6 +560,13 @@
   animation: slideIn 1.5s ease-in-out;
 }
 
+.pet-detail-container .error-message {
+  text-align: center;
+  color: red;
+  margin-top:20px;
+  animation: slideIn 0.5s ease-in-out;
+}
+
 .pet-detail-container .pet-image {
   width: 100%;
   max-height: 400px;
