@@ -21,9 +21,8 @@ const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    let userInfo = JSON.parse(localStorage.getItem('users')) || {};
     if (loggedInUser) {
-      setName(userInfo[0].username);
+      setName(loggedInUser.username);
     } else {
       setName('Guest');
     }
