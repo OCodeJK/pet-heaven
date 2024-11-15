@@ -36,7 +36,6 @@ const Footer = () => {
                         {!loggedInUser && <p><Link to="/login">Login</Link></p>}
                         {!loggedInUser && <p><Link to="/register">Register</Link></p>}
                         {loggedInUser && <p><Link to="/" onClick={handleLogout}>Logout</Link></p>}
-                        <p><Link to="/about">About Us</Link></p>
                     </span>
                 </span>
 
