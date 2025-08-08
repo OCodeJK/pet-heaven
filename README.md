@@ -1,1 +1,1 @@
-Hosted on Netlify: [https://ooijunkang-pethaven.netlify.app/](url)
+Hosted on Netlify: https://ooijunkang-pethaven.netlify.app/
